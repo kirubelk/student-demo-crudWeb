@@ -3,32 +3,46 @@ package mum.edu.cs.cs425.eregister.models;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="students_table")
 public class Student {
-    
-private Long studentID;
+
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)  
+private Integer studentID;
+
+
 private Integer studentNumber;
 private String firstName;
 private String lastName;
 private String middleName;
 private Double cgpa;
 private LocalDate enrollmentDate;
-private Boolean isInternational;
+private String isInternational;
 
+
+
+    
+
+    
 
 
     /**
-     * @return Long return the studentID
+     * @return Integer return the studentID
      */
-    public Long getStudentID() {
+    public Integer getStudentID() {
         return studentID;
     }
 
     /**
      * @param studentID the studentID to set
      */
-    public void setStudentID(Long studentID) {
+    public void setStudentID(Integer studentID) {
         this.studentID = studentID;
     }
 
@@ -117,16 +131,16 @@ private Boolean isInternational;
     }
 
     /**
-     * @return Boolean return the isInternational
+     * @return String return the isInternational
      */
-    public Boolean isIsInternational() {
+    public String getIsInternational() {
         return isInternational;
     }
 
     /**
      * @param isInternational the isInternational to set
      */
-    public void setIsInternational(Boolean isInternational) {
+    public void setIsInternational(String isInternational) {
         this.isInternational = isInternational;
     }
 
